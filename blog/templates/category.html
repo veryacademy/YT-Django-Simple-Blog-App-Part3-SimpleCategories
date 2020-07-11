@@ -1,0 +1,29 @@
+    {% extends "base.html" %}
+
+    {% block title %}
+   Catlist
+    {% endblock %}
+
+    {% block content %}
+    
+    <div class="container">
+
+      <div class="row justify-content-md-center">
+
+      <div class="col-md-8 pt-5">
+      <h1> List of {{catlist.cat}} posts</h1>
+
+      {% for post in catlist.posts %}
+        <div class="col-12 mt-5"><h2>
+          <a class="text-dark" href="{{post.get_absolute_url}}">{{post.title}}</a>
+        </h2></div>
+        <div class="col-12"><p>{{post.excerpt}}</p></div>
+      {% endfor %}
+
+      </div>
+
+      </div>
+
+    </div>
+
+    {% endblock %}
